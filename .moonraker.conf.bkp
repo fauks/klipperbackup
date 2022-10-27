@@ -1,0 +1,63 @@
+[server]
+host = 0.0.0.0
+port = 7125
+max_upload_size = 1024
+
+[file_manager]
+enable_object_processing = False
+
+[authorization]
+cors_domains = 
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	http://*.lan
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+
+[octoprint_compat]
+
+[history]
+
+[announcements]
+subscriptions = 
+	mainsail
+
+[update_manager]
+refresh_interval = 168
+enable_auto_refresh = True
+
+[update_manager mainsail]
+type = web
+channel = stable
+repo = mainsail-crew/mainsail
+path = ~/mainsail
+
+[update_manager crowsnest]
+type = git_repo
+path = ~/crowsnest
+origin = https://github.com/mainsail-crew/crowsnest.git
+managed_services = crowsnest
+
+[update_manager sonar]
+type = git_repo
+path = ~/sonar
+origin = https://github.com/mainsail-crew/sonar.git
+primary_branch = main
+managed_services = sonar
+
+[power Vyper]
+type = tplink_smartplug
+locked_while_printing = True
+restart_klipper_when_powered = True
+restart_delay = 5
+address = 10.10.10.121
+output_id = 0
+
+[power chamber_heater]
+type = tplink_smartplug
+locked_while_printing = False
+restart_klipper_when_powered = False
+address = 10.10.10.121
+output_id = 1
+
