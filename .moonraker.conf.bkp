@@ -61,7 +61,7 @@ restart_klipper_when_powered = False
 address = 10.10.10.121
 output_id = 1
 
-[wled enclosure_led]
+[wled 1]
 type = http
 address = 10.10.10.231
 initial_preset = 1
